@@ -38,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
                     sendLog("onChanged > 0");
                     sendLog(animeModels.get(0).getCharName());
                     for (AnimeModel model:animeModels){
+                        // هنا لازم اشوف طريقة تانيه عشان كده انا سايب الداتا علي الاكتيفيتي و ده المفروض مش صح
+                        // لسه عايز افكر اغير الموضوع ده ازاي
                         adaplist.clear();
                         adaplist.add(model);
                     }
@@ -51,13 +53,13 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
-       // adaplist=mViewModel.getHeros().getValue();
-
         PrepareRecyclerView();
     }
 
     private void PrepareRecyclerView() {
         sendLog("PrepareRecyclerView");
+        // المشكله هنا لما بجيب الداتا علي طول من الفيو موديل بتتاخر فبيكون الحجم بتاع الادابتر zero او null
+       // mAdapter = new RecAdapter(this,mViewModel.getHeros().getValue());
         mAdapter = new RecAdapter(this,adaplist);
             mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
