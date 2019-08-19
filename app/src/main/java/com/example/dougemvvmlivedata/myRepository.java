@@ -10,9 +10,9 @@ import com.google.firebase.firestore.Query;
 
 import java.util.List;
 
-public class myRepository {
+class myRepository {
     private static myRepository instance;
-    public static myRepository getInstance() {
+    static myRepository getInstance() {
         sendLog("getInstance");
         if (instance == null) {
             instance = new myRepository();
@@ -20,15 +20,15 @@ public class myRepository {
         return instance;
     }
 
-    public MutableLiveData<List<AnimeModel>> getData() {
+    MutableLiveData<List<AnimeModel>> getData() {
         sendLog("getData");
         CollectionReference  collectionReference = FirebaseFirestore.getInstance().collection("anime");
-        Query query = collectionReference.whereEqualTo("id", 2);
-        myLiveData1 liveData1 = new myLiveData1(query);
+        Query query = collectionReference.whereEqualTo("id", 1);
+        myLiveData liveData1 = new myLiveData(query);
         return liveData1.getLiveData();
     }
 
-    public static void sendLog(String message) {
+    private static void sendLog(String message) {
         Log.i("mylog_myRepository", message);
     }
 }

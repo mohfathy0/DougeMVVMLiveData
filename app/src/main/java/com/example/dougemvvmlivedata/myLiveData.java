@@ -17,13 +17,13 @@ import java.util.List;
 
 import javax.annotation.Nullable;
 
-public class myLiveData1 extends LiveData<DocumentReference> implements EventListener<QuerySnapshot> {
+public class myLiveData extends LiveData<DocumentReference> implements EventListener<QuerySnapshot> {
     private Query query;
     private ListenerRegistration listener;
     private MutableLiveData<List<AnimeModel>> mListOfDocument;
 
 
-    public myLiveData1(Query query) {
+    myLiveData(Query query) {
         sendLog("Constructor");
         listener = query.addSnapshotListener(this);
         this.query = query;
@@ -65,7 +65,7 @@ public class myLiveData1 extends LiveData<DocumentReference> implements EventLis
         }
     }
 
-    public MutableLiveData<List<AnimeModel>> getLiveData() {
+    MutableLiveData<List<AnimeModel>> getLiveData() {
         sendLog("getLiveData");
         return mListOfDocument;
     }
