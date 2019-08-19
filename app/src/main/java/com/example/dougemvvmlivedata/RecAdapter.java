@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -18,19 +19,21 @@ public class RecAdapter extends RecyclerView.Adapter<RecAdapter.myViewHolder> {
     private List<AnimeModel> animeModels;
     private Context mContext;
 
-    public RecAdapter(Context mContext, List<AnimeModel> animeModels) {
-        this.animeModels = animeModels;
+    RecAdapter(Context mContext) {
+
         this.mContext = mContext;
+        this.animeModels= new ArrayList<>();
     }
 
-    public static class myViewHolder extends RecyclerView.ViewHolder {
 
-        public ImageView mImageView;
-        public TextView mTextviewName;
-        public TextView mTextviewTitle;
+     static class myViewHolder extends RecyclerView.ViewHolder {
+
+         ImageView mImageView;
+         TextView mTextviewName;
+         TextView mTextviewTitle;
 
 
-        public myViewHolder(@NonNull View itemView) {
+         myViewHolder(@NonNull View itemView) {
             super(itemView);
             mImageView = itemView.findViewById(R.id.imageView);
             mTextviewName = itemView.findViewById(R.id.textViewName);
@@ -54,12 +57,13 @@ public class RecAdapter extends RecyclerView.Adapter<RecAdapter.myViewHolder> {
         Glide.with(mContext).asBitmap().load(currentItem.getImageURL()).dontAnimate().into(holder.mImageView);
     }
 
+    // دي الميثود الزياده
+    void setList(List<AnimeModel> models) {
+        this.animeModels = models;
+        notifyDataSetChanged();
+    }
     @Override
     public int getItemCount() {
-        if (animeModels == null) {
-            return 0;
-        } else {
-            return animeModels.size();
-        }
+        return animeModels.size();
     }
 }
