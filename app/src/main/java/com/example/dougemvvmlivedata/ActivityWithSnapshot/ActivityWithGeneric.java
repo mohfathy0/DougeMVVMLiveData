@@ -10,17 +10,13 @@ import android.util.Log;
 
 import com.example.dougemvvmlivedata.AnimeModel;
 import com.example.dougemvvmlivedata.R;
-import com.example.dougemvvmlivedata.RecAdapter;
-import com.example.dougemvvmlivedata.myViewModel;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-public class ActivityWithGenaric extends AppCompatActivity {
-    private myViewModelGenaric mViewModel;
+public class ActivityWithGeneric extends AppCompatActivity {
+    private myViewModelGeneric mViewModel;
     private RecyclerView.LayoutManager mLayoutManager;
     private List<AnimeModel> adaplist;
     @Override
@@ -29,7 +25,7 @@ public class ActivityWithGenaric extends AppCompatActivity {
         setContentView(R.layout.activity_with_genaric);
         adaplist = new ArrayList<>();
 
-        mViewModel = ViewModelProviders.of(this).get(myViewModelGenaric.class);
+        mViewModel = ViewModelProviders.of(this).get(myViewModelGeneric.class);
         mViewModel.init();
         mViewModel.getHeros().observe(this, new Observer<List<QueryDocumentSnapshot>>() {
             @Override
@@ -45,6 +41,6 @@ public class ActivityWithGenaric extends AppCompatActivity {
 
 
     public void sendLog(String message) {
-        Log.i("mylog_ActivityGenaric", message);
+        Log.i("mylog_ActivityGeneric", message);
     }
 }

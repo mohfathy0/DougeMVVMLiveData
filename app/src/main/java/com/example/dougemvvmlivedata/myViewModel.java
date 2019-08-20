@@ -4,8 +4,6 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.example.dougemvvmlivedata.ActivityWithSnapshot.myRepositoryGenaric;
-
 import java.util.List;
 
 public class myViewModel extends ViewModel {

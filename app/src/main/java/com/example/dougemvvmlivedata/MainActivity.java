@@ -1,7 +1,6 @@
 package com.example.dougemvvmlivedata;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -13,7 +12,7 @@ import android.util.Log;
 import android.view.View;
 
 
-import com.example.dougemvvmlivedata.ActivityWithSnapshot.ActivityWithGenaric;
+import com.example.dougemvvmlivedata.ActivityWithSnapshot.ActivityWithGeneric;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -78,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void buttonGeneric_Click(View view){
-        Intent i = new Intent(this, ActivityWithGenaric.class);
+        Intent i = new Intent(this, ActivityWithGeneric.class);
         startActivity(i);
     }
 }

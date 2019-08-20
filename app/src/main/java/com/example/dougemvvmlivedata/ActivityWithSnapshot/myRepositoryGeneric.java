@@ -11,21 +11,13 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 import java.util.List;
 
-public class myRepositoryGenaric {
-    /*
+public class myRepositoryGeneric {
 
-
-
-    ===================== This is under construction ========================
-
-
-
-    */
-    private static myRepositoryGenaric instance;
-    public static myRepositoryGenaric getInstance() {
+    private static myRepositoryGeneric instance;
+    public static myRepositoryGeneric getInstance() {
         sendLog("getInstance");
         if (instance == null) {
-            instance = new myRepositoryGenaric();
+            instance = new myRepositoryGeneric();
         }
         return instance;
     }
@@ -34,11 +26,11 @@ public class myRepositoryGenaric {
         sendLog("getData");
         CollectionReference collectionReference = FirebaseFirestore.getInstance().collection("anime");
         Query query = collectionReference.whereEqualTo("id", 1);
-        myLiveDataGenaric liveData1 = new myLiveDataGenaric(query);
+        myLiveDataGeneric liveData1 = new myLiveDataGeneric(query);
         return  liveData1.getLiveData();
     }
 
     private static void sendLog(String message) {
-        Log.i("mylog_myRepository", message);
+        Log.i("mylog_myRepoGeneric", message);
     }
 }

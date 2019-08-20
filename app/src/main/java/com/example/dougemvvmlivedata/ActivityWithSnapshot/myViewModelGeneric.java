@@ -4,21 +4,20 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.example.dougemvvmlivedata.AnimeModel;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 import java.util.List;
 
-public class myViewModelGenaric extends ViewModel {
+public class myViewModelGeneric extends ViewModel {
 
     private MutableLiveData<List<QueryDocumentSnapshot>> mMainModel;
-    private myRepositoryGenaric mRepository;
+    private myRepositoryGeneric mRepository;
 
    public void init() {
         if (mMainModel != null) {
             return;
         }
-        mRepository = myRepositoryGenaric.getInstance();
+        mRepository = myRepositoryGeneric.getInstance();
         mMainModel = mRepository.getData();
     }
     public LiveData<List<QueryDocumentSnapshot>> getHeros() {
