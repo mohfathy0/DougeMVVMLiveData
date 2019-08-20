@@ -1,4 +1,4 @@
-package com.example.dougemvvmlivedata;
+package com.example.dougemvvmlivedata.ActivityWithSnapshot;
 
 import android.util.Log;
 
@@ -8,9 +8,7 @@ import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class myRepositoryGenaric {
@@ -32,26 +30,12 @@ public class myRepositoryGenaric {
         return instance;
     }
 
-    public MutableLiveData<List<AnimeModel>> getData() {
+    public MutableLiveData<List<QueryDocumentSnapshot>> getData() {
         sendLog("getData");
         CollectionReference collectionReference = FirebaseFirestore.getInstance().collection("anime");
         Query query = collectionReference.whereEqualTo("id", 1);
         myLiveDataGenaric liveData1 = new myLiveDataGenaric(query);
-        ArrayList<QueryDocumentSnapshot> LiveSnap = liveData1.getLiveData().getValue();
-        List<AnimeModel> models = new ArrayList<>();
-        MutableLiveData<List<AnimeModel>> returnedvalue = new MutableLiveData<List<AnimeModel>>();
-        if (LiveSnap != null) {
-            for (QueryDocumentSnapshot snap : LiveSnap) {
-
-
-                sendLog("getData loop");
-
-                models.add(snap.toObject(AnimeModel.class));
-            }
-
-        }
-        returnedvalue.setValue(models);
-        return returnedvalue;
+        return  liveData1.getLiveData();
     }
 
     private static void sendLog(String message) {

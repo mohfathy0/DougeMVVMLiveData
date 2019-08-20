@@ -7,9 +7,13 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
+
+import com.example.dougemvvmlivedata.ActivityWithSnapshot.ActivityWithGenaric;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -70,5 +74,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void sendLog(String message) {
         Log.i("mylog_MainActivity", message);
+    }
+
+
+    public void buttonGeneric_Click(View view){
+        Intent i = new Intent(this, ActivityWithGenaric.class);
+        startActivity(i);
     }
 }

@@ -1,4 +1,4 @@
-package com.example.dougemvvmlivedata;
+package com.example.dougemvvmlivedata.ActivityWithSnapshot;
 
 import android.util.Log;
 import androidx.lifecycle.LiveData;
@@ -12,6 +12,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.annotation.Nullable;
     /*
@@ -31,14 +32,14 @@ import javax.annotation.Nullable;
 public class myLiveDataGenaric extends LiveData<DocumentReference> implements EventListener<QuerySnapshot> {
     private Query query;
     private ListenerRegistration listener;
-    private MutableLiveData<ArrayList<QueryDocumentSnapshot>> mListOfDocument;
+    private MutableLiveData<List<QueryDocumentSnapshot>> mListOfDocument;
 
 
     public myLiveDataGenaric(Query query) {
         sendLog("Constructor");
         listener = query.addSnapshotListener(this);
         this.query = query;
-        mListOfDocument = new MutableLiveData<ArrayList<QueryDocumentSnapshot>>();
+        mListOfDocument = new MutableLiveData<List<QueryDocumentSnapshot>>();
 
     }
 
@@ -91,7 +92,7 @@ public class myLiveDataGenaric extends LiveData<DocumentReference> implements Ev
         }
     }
 
-    public MutableLiveData<ArrayList<QueryDocumentSnapshot>> getLiveData() {
+    public MutableLiveData<List<QueryDocumentSnapshot>> getLiveData() {
         sendLog("getLiveData");
         return mListOfDocument;
     }
