@@ -17,6 +17,11 @@ import java.util.List;
 
 import javax.annotation.Nullable;
 
+    //https://www.youtube.com/watch?v=WXc4adLMDqk&feature=share&fbclid=IwAR1_nYdrUDP9cm4dD_qT4LUshpl22cb4-HZeb2OrSGbBJ-dYWILcwCcBARQ
+    //https://github.com/Bassem-Kamal/TryUsingMVVMWithFireBase/blob/master/ItemRepository.java
+    //https://stackoverflow.com/questions/49798814/android-architecture-components-with-firebase-specifically-firestore
+   
+
 public class myLiveData extends LiveData<DocumentReference> implements EventListener<QuerySnapshot> {
     private Query query;
     private ListenerRegistration listener;
