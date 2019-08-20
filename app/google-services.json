@@ -52,6 +52,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "704835914601-3hm0l1sc3oq8am2u9vr41lnp8ovi7csj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.dougemvvmlivedata",
+            "certificate_hash": "56d8989ff2d441ab4697e3da768b5efdadbdfc67"
+          }
+        },
+        {
           "client_id": "704835914601-d2rvf0pgr4q3b7eadrgjj02oicavoma6.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

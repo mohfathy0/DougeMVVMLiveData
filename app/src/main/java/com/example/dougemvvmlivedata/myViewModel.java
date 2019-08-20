@@ -10,19 +10,19 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.List;
 
-class myViewModel extends ViewModel {
+public class myViewModel extends ViewModel {
 
     private MutableLiveData<List<AnimeModel>> mMainModel;
     private myRepository mRepository;
 
-    void init() {
+   public void init() {
         if (mMainModel != null) {
             return;
         }
         mRepository = myRepository.getInstance();
         mMainModel = mRepository.getData();
     }
-    LiveData<List<AnimeModel>> getHeros() {
+    public LiveData<List<AnimeModel>> getHeros() {
         return mMainModel;
     }
 }
