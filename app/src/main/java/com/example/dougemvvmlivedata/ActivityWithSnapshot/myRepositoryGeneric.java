@@ -22,10 +22,17 @@ public class myRepositoryGeneric {
         return instance;
     }
 
-    public MutableLiveData<List<QueryDocumentSnapshot>> getData() {
+    public MutableLiveData<List<QueryDocumentSnapshot>> getData(String collectionPath,String fieldName,int value) {
         sendLog("getData");
-        CollectionReference collectionReference = FirebaseFirestore.getInstance().collection("anime");
-        Query query = collectionReference.whereEqualTo("id", 1);
+        CollectionReference collectionReference = FirebaseFirestore.getInstance().collection(collectionPath);
+        Query query = collectionReference.whereEqualTo(fieldName, value);
+        myLiveDataGeneric liveData1 = new myLiveDataGeneric(query);
+        return  liveData1.getLiveData();
+    }
+    public MutableLiveData<List<QueryDocumentSnapshot>> getData(String collectionPath,String fieldName,String value) {
+        sendLog("getData");
+        CollectionReference collectionReference = FirebaseFirestore.getInstance().collection(collectionPath);
+        Query query = collectionReference.whereEqualTo(fieldName, value);
         myLiveDataGeneric liveData1 = new myLiveDataGeneric(query);
         return  liveData1.getLiveData();
     }

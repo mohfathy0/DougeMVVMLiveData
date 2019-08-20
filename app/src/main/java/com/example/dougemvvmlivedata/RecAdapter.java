@@ -19,7 +19,7 @@ public class RecAdapter extends RecyclerView.Adapter<RecAdapter.myViewHolder> {
     private List<AnimeModel> animeModels;
     private Context mContext;
 
-    RecAdapter(Context mContext) {
+    public RecAdapter(Context mContext) {
 
         this.mContext = mContext;
         this.animeModels= new ArrayList<>();
@@ -58,7 +58,7 @@ public class RecAdapter extends RecyclerView.Adapter<RecAdapter.myViewHolder> {
     }
 
     // دي الميثود الزياده
-    void setList(List<AnimeModel> models) {
+   public void setList(List<AnimeModel> models) {
         this.animeModels = models;
         notifyDataSetChanged();
     }

@@ -55,18 +55,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void PrepareRecyclerView() {
         sendLog("PrepareRecyclerView");
-
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
-        // المشكله هنا لما بجيب الداتا علي طول من الفيو موديل بتتاخر فبيكون الحجم بتاع الادابتر zero او null
-        // mAdapter = new RecAdapter(this,mViewModel.getHeros().getValue());
-        // انا لقيت حل وهو اني اعمل set لل items بس جوه ال adapter بعد ما اجيب الداتا من الموديل و عملت لها ميثود لوحدها جوه ال adapter سميتها setList
-        // فلما نجيب الفيوموديل يتعبي بالداتا في onChanged ساعتها تعدل الداتا اللي جوه الادابتر و نعمل notify او submit زي ما انت كنت عامل
-        // الحته دي محدش بيجيب سيرتها علي النت لان كله بيعمل داتا وهميه في ليست او بيشتغل sqllite فالموضوع مفيهوش تأخير
-        // و لما بيحبو يمثلو التاخير عن طريق
-        //  Thread.sleep(1000);
-        // بيكون قبلها حاطت داتا عن طريقهlist بدون اي delay  فا recyclerview عمرها ما بتضرب منه و عمرها ما بتطلع null لان مفيش اي delay
-
         mAdapter = new RecAdapter(this);
         mRecyclerView.setAdapter(mAdapter);
     }

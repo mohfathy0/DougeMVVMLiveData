@@ -13,13 +13,23 @@ public class myViewModelGeneric extends ViewModel {
     private MutableLiveData<List<QueryDocumentSnapshot>> mMainModel;
     private myRepositoryGeneric mRepository;
 
-   public void init() {
+    public void init() {
         if (mMainModel != null) {
             return;
         }
         mRepository = myRepositoryGeneric.getInstance();
-        mMainModel = mRepository.getData();
+
+        }
+
+
+
+    public void RequestDataFromRepo(String collectionPath,String fieldName,int value){
+        mMainModel = mRepository.getData(collectionPath,fieldName,value);
     }
+    public void RequestDataFromRepo(String collectionPath,String fieldName,String value){
+        mMainModel = mRepository.getData(collectionPath,fieldName,value);
+    }
+
     public LiveData<List<QueryDocumentSnapshot>> getHeros() {
         return mMainModel;
     }
