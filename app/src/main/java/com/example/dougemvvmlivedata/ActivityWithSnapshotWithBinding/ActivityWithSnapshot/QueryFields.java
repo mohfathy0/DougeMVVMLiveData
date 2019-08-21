@@ -1,4 +1,4 @@
-package com.example.dougemvvmlivedata.ActivityWithSnapshot;
+package com.example.dougemvvmlivedata.ActivityWithSnapshotWithBinding.ActivityWithSnapshot;
 
 
   class QueryFields {
@@ -10,9 +10,9 @@ package com.example.dougemvvmlivedata.ActivityWithSnapshot;
 
 }
 
-  class QueryCollection {
+class QueryCollection {
 
-    public static  String NAME="anime";
+  public static  String NAME="anime";
 
 
 }

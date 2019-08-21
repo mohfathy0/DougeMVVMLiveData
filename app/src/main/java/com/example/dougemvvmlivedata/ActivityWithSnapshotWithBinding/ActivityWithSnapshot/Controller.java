@@ -1,4 +1,4 @@
-package com.example.dougemvvmlivedata.ActivityWithSnapshot;
+package com.example.dougemvvmlivedata.ActivityWithSnapshotWithBinding.ActivityWithSnapshot;
 
 
 import android.util.Log;
@@ -6,8 +6,10 @@ import android.util.Log;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+
 import com.example.dougemvvmlivedata.AnimeModel;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
+
 import java.util.ArrayList;
 import java.util.List;
 

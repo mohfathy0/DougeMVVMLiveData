@@ -1,11 +1,11 @@
-package com.example.dougemvvmlivedata.ActivityWithSnapshot;
+package com.example.dougemvvmlivedata.ActivityWithSnapshotWithBinding.ActivityWithSnapshot;
+
+import android.os.Bundle;
+import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.os.Bundle;
-import android.util.Log;
 
 import com.example.dougemvvmlivedata.AnimeModel;
 import com.example.dougemvvmlivedata.R;
@@ -29,7 +29,7 @@ public class ActivityWithGeneric extends AppCompatActivity implements IActivityW
         mRecyclerView = findViewById(R.id.mRecyclerView);
         adaplist = new ArrayList<>();
          ctrl = new Controller(this, iActivityWithGeneric);
-        ctrl.GetDocumentWhereEquals(QueryCollection.NAME,QueryFields.NAME,2);
+        ctrl.GetDocumentWhereEquals(QueryCollection.NAME, QueryFields.NAME,2);
         PrepareRecyclerView();
     }
 
