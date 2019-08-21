@@ -4,6 +4,6 @@ import com.example.dougemvvmlivedata.AnimeModel;
 
 import java.util.List;
 
-interface IActivityWithGeneric {
+interface IActivityWithGenericB {
     void SetAndNotifyAdapter(List<AnimeModel> modelList);
 }

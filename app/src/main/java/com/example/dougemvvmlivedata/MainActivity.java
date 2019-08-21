@@ -12,7 +12,7 @@ import android.util.Log;
 import android.view.View;
 
 
-import com.example.dougemvvmlivedata.ActivityWithSnapshot.ActivityWithGeneric;
+import com.example.dougemvvmlivedata.ActivityWithSnapshotWithBinding.ActivityWithSnapshot.ActivityWithGenericBB;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void buttonGeneric_Click(View view){
-        Intent i = new Intent(this, ActivityWithGeneric.class);
+        Intent i = new Intent(this, ActivityWithGenericBB.class);
         startActivity(i);
     }
 }

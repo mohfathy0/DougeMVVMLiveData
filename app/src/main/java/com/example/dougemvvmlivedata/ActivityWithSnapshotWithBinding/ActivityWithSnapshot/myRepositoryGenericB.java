@@ -11,13 +11,13 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 import java.util.List;
 
-public class myRepositoryGeneric {
+public class myRepositoryGenericB {
 
-    private static myRepositoryGeneric instance;
-    public static myRepositoryGeneric getInstance() {
+    private static myRepositoryGenericB instance;
+    public static myRepositoryGenericB getInstance() {
         sendLog("getInstance");
         if (instance == null) {
-            instance = new myRepositoryGeneric();
+            instance = new myRepositoryGenericB();
         }
         return instance;
     }
@@ -26,14 +26,14 @@ public class myRepositoryGeneric {
         sendLog("getData");
         CollectionReference collectionReference = FirebaseFirestore.getInstance().collection(collectionPath);
         Query query = collectionReference.whereEqualTo(fieldName, value);
-        myLiveDataGeneric liveData1 = new myLiveDataGeneric(query);
+        myLiveDataGenericB liveData1 = new myLiveDataGenericB(query);
         return  liveData1.getLiveData();
     }
     public MutableLiveData<List<QueryDocumentSnapshot>> getData(String collectionPath,String fieldName,String value) {
         sendLog("getData");
         CollectionReference collectionReference = FirebaseFirestore.getInstance().collection(collectionPath);
         Query query = collectionReference.whereEqualTo(fieldName, value);
-        myLiveDataGeneric liveData1 = new myLiveDataGeneric(query);
+        myLiveDataGenericB liveData1 = new myLiveDataGenericB(query);
         return  liveData1.getLiveData();
     }
 

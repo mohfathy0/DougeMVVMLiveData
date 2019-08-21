@@ -8,16 +8,16 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 import java.util.List;
 
-public class myViewModelGeneric extends ViewModel {
+public class myViewModelGenericB extends ViewModel {
 
     private MutableLiveData<List<QueryDocumentSnapshot>> mMainModel;
-    private myRepositoryGeneric mRepository;
+    private myRepositoryGenericB mRepository;
 
     public void init() {
         if (mMainModel != null) {
             return;
         }
-        mRepository = myRepositoryGeneric.getInstance();
+        mRepository = myRepositoryGenericB.getInstance();
 
         }
 

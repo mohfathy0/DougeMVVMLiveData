@@ -22,13 +22,13 @@ import javax.annotation.Nullable;
     //https://github.com/Bassem-Kamal/TryUsingMVVMWithFireBase/blob/master/ItemRepository.java
     //https://stackoverflow.com/questions/49798814/android-architecture-components-with-firebase-specifically-firestore
 
-public class myLiveDataGeneric extends LiveData<DocumentReference> implements EventListener<QuerySnapshot> {
+public class myLiveDataGenericB extends LiveData<DocumentReference> implements EventListener<QuerySnapshot> {
     private Query query;
     private ListenerRegistration listener;
     private MutableLiveData<List<QueryDocumentSnapshot>> mListOfDocument;
 
 
-    public myLiveDataGeneric(Query query) {
+    public myLiveDataGenericB(Query query) {
         sendLog("Constructor");
         listener = query.addSnapshotListener(this);
         this.query = query;

@@ -13,19 +13,19 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Controller {
+public class ControllerB {
     private AppCompatActivity activity;
-    private static myViewModelGeneric mViewModel;
-    private IActivityWithGeneric igeneric;
+    private static myViewModelGenericB mViewModel;
+    private IActivityWithGenericB igeneric;
 
 
 
-    public Controller(AppCompatActivity parent, IActivityWithGeneric activityWithGeneric) {
+    public ControllerB(AppCompatActivity parent, IActivityWithGenericB activityWithGeneric) {
         activity = parent;
         igeneric = activityWithGeneric;
 
         if (mViewModel == null) {
-            mViewModel = ViewModelProviders.of(parent).get(myViewModelGeneric.class);
+            mViewModel = ViewModelProviders.of(parent).get(myViewModelGenericB.class);
 
         }
         sendLog("constractor");
