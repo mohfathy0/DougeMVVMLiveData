@@ -39,7 +39,7 @@ public class ActivityWithGenericBB extends AppCompatActivity implements IActivit
         mainBinding.mRecyclerView.setAdapter(mAdapter);
 
         ctrl = new ControllerB(this, iActivityWithGenericB);
-        ctrl.GetDocumentWhereEquals(QueryCollection.NAME, QueryFields.NAME, 2);
+        ctrl.GetDocumentWhereEquals(QueryCollection.NAME, QueryFields.ID, 2);
         PrepareRecyclerView();
         sendLog("nCreate");
     }

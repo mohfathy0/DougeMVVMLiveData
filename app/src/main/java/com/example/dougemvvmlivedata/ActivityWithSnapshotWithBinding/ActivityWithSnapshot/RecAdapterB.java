@@ -33,6 +33,7 @@ public class RecAdapterB extends RecyclerView.Adapter<RecAdapterB.myViewHolder> 
          TextView mTextviewName;
          TextView mTextviewTitle;
          */
+
         RecyclerviewLayoutWithBBinding recyclerviewLayoutwithbBinding;
 
          myViewHolder(@NonNull RecyclerviewLayoutWithBBinding  itemView) {
