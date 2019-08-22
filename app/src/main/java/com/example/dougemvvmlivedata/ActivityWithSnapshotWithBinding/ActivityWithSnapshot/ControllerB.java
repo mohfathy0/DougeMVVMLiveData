@@ -2,14 +2,11 @@ package com.example.dougemvvmlivedata.ActivityWithSnapshotWithBinding.ActivityWi
 
 
 import android.util.Log;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
-
 import com.example.dougemvvmlivedata.AnimeModel;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,7 +14,6 @@ public class ControllerB {
     private AppCompatActivity activity;
     private static myViewModelGenericB mViewModel;
     private IActivityWithGenericB igeneric;
-
 
 
     public ControllerB(AppCompatActivity parent, IActivityWithGenericB activityWithGeneric) {
@@ -70,15 +66,15 @@ public class ControllerB {
 
     }
 
-    public void onDestroy(){
-        activity=null;
-        igeneric=null;
-        mViewModel=null;
+    public void onDestroy() {
+        activity = null;
+        igeneric = null;
+        mViewModel = null;
     }
 
 
     public void sendLog(String message) {
-        Log.i("mylog_Controller", message);
+        Log.i("mylog_ControllerB", message);
     }
 
 

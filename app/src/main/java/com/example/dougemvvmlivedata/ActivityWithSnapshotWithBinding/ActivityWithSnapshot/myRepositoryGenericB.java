@@ -38,6 +38,6 @@ public class myRepositoryGenericB {
     }
 
     private static void sendLog(String message) {
-        Log.i("mylog_myRepoGeneric", message);
+        Log.i("mylog_myRepoGenericB", message);
     }
 }
